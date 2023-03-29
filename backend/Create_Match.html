@@ -21,6 +21,7 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <link rel="stylesheet" type="text/css" href="assets/css/style3.css">
+    <script type="text/javascript" src="js/create_match.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -92,38 +93,13 @@
                 <li class="header">THANH QUẢN TRỊ</li>
 
                 <li>
-                    <a href="News.html">
-                        <i class="fa fa-th"></i> <span>Tin tức</span>
+                    <a href="Match.html">
+                        <i class="fa fa-th"></i> <span>Quản lý trận đấu</span>
                         <span class="pull-right-container">
               <!--<small class="label pull-right bg-green">new</small>-->
             </span>
                     </a>
                 </li>
-                <li>
-                    <a href="Products.html">
-                        <i class="fas fa-boxes"></i> <span> Sản phẩm</span>
-                        <span class="pull-right-container">
-              <!--<small class="label pull-right bg-green">new</small>-->
-            </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="Order.html">
-                        <i class="fas fa-dolly-flatbed"></i> <span>Đơn hàng</span>
-                        <span class="pull-right-container">
-              <!--<small class="label pull-right bg-green">new</small>-->
-            </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="User.html">
-                        <i class="fa fa-code"></i> <span>Quản lý user</span>
-                        <span class="pull-right-container">
-              <!--<small class="label pull-right bg-green">new</small>-->
-            </span>
-                    </a>
-                </li>
-            </ul>
         </section>
         <!-- /.sidebar -->
     </aside>
@@ -161,12 +137,13 @@
             <a href="Match.html"><i class="fas fa-list"></i> Danh sách trận đấu</a>
             <br>
             <br>
-            <form action="" method="post" enctype="multipart/form-data">
-            	<div class="form-group">
+            <form action="" method="post" enctype="multipart/form-data" name="create" onsubmit="return createMatch();">
+                <h4 id="error" style="color: red;"></h4>
+            	<div class="form-group" name="div">
 			        <label for="format">Hình thức:<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
 			        <input type="text" name="format" id="format" class="form-control">
 			    </div>
-			    <div class="form-group">
+			    <div class="form-group" name="div">
 			        <label for="name">Tên trận đấu:<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
 			        <input type="text" name="name" id="name" class="form-control">
 			    </div>
@@ -175,32 +152,32 @@
 			        <input type="text" name="match_code" id="match_code" class="form-control">
 			    </div>
 			    <div class="form-group">
-			        <label for="Team_1">Đội sân nhà<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
-			        <input type="text" name="Team_1" id="Team_1" class="form-control">
+			        <label for="team_1">Đội sân nhà<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
+			        <input type="text" name="team_1" id="team_1" class="form-control">
 			        <br>
 			        <input type="file" name="Team_one" class="btn btn-success">
 			    </div>
 			    <div class="form-group">
-			        <label for="Team_2">Đội sân khách<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
-			        <input type="text" name="Team_2" id="Team_2" class="form-control">
+			        <label for="team_2">Đội sân khách<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
+			        <input type="text" name="team_2" id="team_2" class="form-control">
 			        <br>
 			        <input type="file" name="Team_two" class="btn btn-success">
 			    </div>
 			    <div class="form-group">
-			        <label for="Match_code">Thời gian diễn ra<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
-			        <input type="text" name="match_code" id="match_code" class="form-control">
+			        <label for="time">Thời gian diễn ra<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
+			        <input type="datetime-local" name="time" id="time" class="form-control">
 			    </div>
 			    <div class="form-group">
-			        <label for="Match_code">Tỉ lệ cược đội sân nhà<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
-			        <input type="number" name="match_code" id="match_code" class="form-control" min="0" max="10">
+			        <label for="bet_team_1">Tỉ lệ cược đội sân nhà<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
+			        <input type="number" name="bet_team_1" id="bet_team_1" class="form-control" min="0" max="10">
 			    </div>
 			    <div class="form-group">
-			        <label for="Match_code">Tỉ lệ cược đội sân khách<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
-			        <input type="number" name="match_code" id="match_code" class="form-control" min="0" max="10">
+			        <label for="bet_team_2">Tỉ lệ cược đội sân khách<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
+			        <input type="number" name="bet_team_2" id="bet_team_2" class="form-control" min="0" max="10">
 			    </div>
 			    <div class="form-group">
-			        <label for="Match_code">Tỉ lệ cược chung<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
-			        <input type="number" name="match_code" id="match_code" class="form-control" min="0" max="10">
+			        <label for="bet_all">Tỉ lệ cược chung<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
+			        <input type="number" name="bet_all" id="bet_all" class="form-control" min="0" max="10">
 			    </div>
 			    <div class="form-group">
 			        <label for="result">Kết quả trận đấu<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
