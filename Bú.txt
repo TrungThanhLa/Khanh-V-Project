@@ -1,0 +1,8 @@
+1. Đổi Logo và tên trang web
+2. Tìm hiểu về API và cách tạo API
+3. Chèn thẻ Script vào HTML
+4. Kết nối Backend với Frontend
+
+----------------------------
+
+1. Tìm hiểu về JS, ReactJS

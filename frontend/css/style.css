@@ -1,0 +1,316 @@
+/*style.css*/
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.row {
+    /*display: ;*/
+    display: none;
+    display: flex;;
+    flex-wrap: unset;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.r_match {
+    display: none;
+    display: flex;;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+a {
+    color: #0F5A88;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.Header_1 {
+    background: #0987D1;
+}
+
+.Menu {
+    margin-left: 50px;
+}
+
+a.anchor_Menu {
+	padding: 10px;
+	color: white;
+	opacity: 0.6;
+	font-size: 14px;
+	border-bottom: 0px solid white;
+	transition: ease-in-out 0.1s;
+
+}
+
+a.anchor_Menu:hover {
+	color: white;
+	opacity: 1;
+	text-decoration: none;
+	border-bottom: 2px solid white;
+	transition: ease-in-out 0.1s;
+
+}
+
+.Login {
+/*    line-height: 2px;*/
+    align-self: center;
+    margin-left: 900px;
+}
+
+a.Contact {
+    font-size: 16px;
+    color: white;
+    padding: 5px;
+}
+
+a.Login_box {
+    font-size: 14px;
+    color: white;
+    font-weight: 700;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 2px;
+    transition: ease-in-out 0.2s;
+}
+
+a.Login_box:hover {
+	text-decoration: none;
+	background: white;
+	color: #0F5A88;
+	transition: ease-in-out 0.2s;
+}
+
+a.Register {
+	background: #0F5A88;
+    font-size: 14px;
+    color: white;
+    font-weight: 700;
+    padding: 5px;
+    border: 1px solid #0F5A88;
+    border-radius: 2px;
+    transition: ease-in-out 0.2s;
+}
+
+a.Register:hover {
+	text-decoration: none;
+	background: white;
+	color: #0F5A88;
+	transition: ease-in-out 0.2s;
+}
+
+span.Mark {
+    border: 1px solid white;
+    background: white;
+    padding: 1px 8px;
+    border-radius: 20px;
+    color: #0987D1;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.Menu_Content {
+    margin: 10px 0px;
+}
+
+a.anchor_Content {
+    font-size: 17px;
+    color: #0F5A88;
+    padding: 15px;
+    transition: ease-in-out 0.1s;
+}
+
+a.anchor_Content:hover {
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom: 2px solid #0987D1;
+	transition: ease-in-out 0.1s;
+}
+
+a.LIVE_Content {
+	font-style: italic;
+	font-size: 14px;
+	font-weight: bold; 
+	color: #0F5A88;
+}
+
+.Background {
+    background: #F5F7F8;
+}
+
+.Match {
+    width: 20%;
+    background: white;
+    margin: 20px;
+    margin-left: 65px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px darkgray;
+    text-align: center;
+}
+
+a.Title {
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+a.Time {
+    font-size: 12px;
+    margin-left: 120px;
+}
+
+.Team {
+    margin: 15px 0px;
+}
+
+.Team_1 {
+    width: 50%;
+    text-align: center;
+}
+
+a.Team_one {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.Team_2 {
+    width: 50%;
+    text-align: center;
+}
+
+a.Team_two {
+    font-size: 14px;
+}
+
+.Result {
+    display: inline-flex;
+    width: 100%;
+    margin: 0px 2px;
+}
+
+.line {
+    border-bottom: 1px solid darkgray;
+    width: 40%;
+    align-self: center;
+    opacity: 0.5;
+}
+
+span.Match_Result {
+    font-size: 12px;
+    color: gray;
+    line-height: 2px;
+}
+
+.Bet_Box {
+    margin: 25px 0px;
+    font-size: 14px;
+}
+
+.Bet {
+    display: inline-block;
+    font-size: 14px;
+    width: 33.3%;
+    text-align: center;
+}
+
+a.value {
+    padding: 5px;
+    border: 2px solid lightgray;
+    background: #F5F7F8;
+    border-radius: 3px;
+    margin: 10px;
+    transition: ease-in-out 0.2s;
+}
+
+a.value:hover {
+    background: lightgray;
+    transition: ease-in-out 0.2s;
+}
+
+span.number {
+    margin-right: 20px;
+}
+
+.Popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity linear 0.1s;
+}
+
+.Popup:target {
+    visibility: visible;
+    transition: opacity linear 0.1s;
+    opacity: 1;
+}
+
+.Popup_content {
+    width: 500px;
+    position: relative;
+    padding: 100px 150px;
+    text-align: center;
+    background-image: url(Bet.jpg);
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px black;
+}
+
+a.close_Popup {
+    position: absolute;
+    top: -5px;
+    right: 6px;
+    color: white;
+    font-size: 30px;
+    text-shadow: 0px 0px 10px white;
+}
+
+p.bet_title {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0px 0px 10px black
+}
+
+input[type="number"] {
+    margin-bottom: 30px;
+    padding-left: 15px;
+    text-align: center;
+}
+
+
+a.Bet_Button {
+    padding: 5px 50px;
+    background: indianred;
+    border-radius: 3px;
+    color: white;
+    font-weight: 700;
+    transition: ease-in-out 0.2s;
+}
+
+a.Bet_Button:hover {
+    background: orangered;
+    transition: ease-in-out 0.2s;
+}
+
+
+
