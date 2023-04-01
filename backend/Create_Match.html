@@ -21,7 +21,7 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <link rel="stylesheet" type="text/css" href="assets/css/style3.css">
-    <script type="text/javascript" src="js/create_match.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -139,11 +139,11 @@
             <br>
             <form action="" method="post" enctype="multipart/form-data" name="create" onsubmit="return createMatch();">
                 <h4 id="error" style="color: red;"></h4>
-            	<div class="form-group" name="div">
+            	<div class="form-group">
 			        <label for="format">Hình thức:<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
 			        <input type="text" name="format" id="format" class="form-control">
 			    </div>
-			    <div class="form-group" name="div">
+			    <div class="form-group">
 			        <label for="name">Tên trận đấu:<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
 			        <input type="text" name="name" id="name" class="form-control">
 			    </div>
@@ -155,13 +155,21 @@
 			        <label for="team_1">Đội sân nhà<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
 			        <input type="text" name="team_1" id="team_1" class="form-control">
 			        <br>
-			        <input type="file" name="Team_one" class="btn btn-success">
+			        <input type="file" name="file_upload_team_1" id="file_upload" class="btn btn-success" onchange="return getFile();">
+                    <!-- <script>
+                        function xulyfile() {
+                            var arr = event.target.files;//mảng các file được chọn
+                            var f = arr[0];
+                            console.log(f);
+                        }
+                        
+                        </script> -->
 			    </div>
 			    <div class="form-group">
 			        <label for="team_2">Đội sân khách<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
 			        <input type="text" name="team_2" id="team_2" class="form-control">
 			        <br>
-			        <input type="file" name="Team_two" class="btn btn-success">
+			        <input type="file" name="file_upload_team_2" id="file_upload" class="btn btn-success">
 			    </div>
 			    <div class="form-group">
 			        <label for="time">Thời gian diễn ra<span style="color: red" title="Thông tin bắt buộc"> *</span></label>
