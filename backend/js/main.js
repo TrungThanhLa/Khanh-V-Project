@@ -1,12 +1,24 @@
-var fileobj;
+var fileobj_1;
 
-function getFile(){
-    var fileUpload = document.querySelector('Team_one')
+function getFile1(){
+    var fileUpload1 = document.querySelector('Team_one')
     var arr = event.target.files;//mảng các file được chọn
                 var f = arr[0];
                 // console.log(f);
-                fileobj = f;
-                console.log(fileobj);
+                fileobj_1 = f;
+                console.log(fileobj_1);
+    return true;
+}
+
+var fileobj_2;
+
+function getFile2(){
+    var fileUpload2 = document.querySelector('Team_two')
+    var arr = event.target.files;//mảng các file được chọn
+                var f = arr[0];
+                // console.log(f);
+                fileobj_2 = f;
+                console.log(fileobj_2);
     return true;
 }
 
@@ -22,7 +34,7 @@ function createMatch() {
     var bet_all = document.create.bet_all.value;
     var result = document.create.result.value;
     var match_status = document.create.Match_status.value;
-    var fileUpload = document.getElementById('file_upload_team_1');
+    // var fileUpload = document.getElementById('file_upload_team_1');
     // var file_upload_team_2 = document.getElementById('file_upload_team_2');
 
     if (match_status == 0) {
@@ -52,7 +64,8 @@ function createMatch() {
         "Tỉ lệ cược chung": bet_all,
         "Kết quả trận đấu": result,
         "Trạng thái": match_status,
-        "Ảnh đội 1": fileobj.name
+        "Ảnh đội 1": fileobj_1.name,
+        "Ảnh đội 2": fileobj_2.name
     };
     var obj = JSON.stringify(str);
     console.log(obj);
