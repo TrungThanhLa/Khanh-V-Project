@@ -1,4 +1,4 @@
-const axios = require("axios");
+// const axios = require("axios")
 var fileobj_1;
 
 function getFile1() {
@@ -23,7 +23,8 @@ function getFile2() {
   return true;
 }
 
-function createMatch() {
+var matchInfo;
+ function createMatch() {
   var format = document.create.format.value;
   var name = document.create.name.value;
   var match_code = document.create.match_code.value;
@@ -35,7 +36,7 @@ function createMatch() {
   var bet_all = document.create.bet_all.value;
   var result = document.create.result.value;
   var match_status = document.create.Match_status.value;
-
+  var submit = document.getElementById("submit");
   if (match_status == 0) {
     match_status = "Chưa diễn ra";
   }
@@ -65,21 +66,35 @@ function createMatch() {
   //     "Ảnh đội 2": fileobj_2.name
   // };
 
-  var matchInfo = JSON.stringify({
-    name: match_code,
-    matchStartDate: time,
-    matchResult: null,
-    matchEndDate: null,
-    matchBetWinProportion: bet_team_1,
-    matchBetDrawProportion: bet_all,
-    matchBetLoseProportion: bet_team_2,
-  });
-
-  axios({
-    method: "post",
-    url: "http://localhost:3000/matchInfo",
-    data: { matchInfo },
-  });
-  console.log(obj);
-  return true;
+  matchInfo = {
+    "name": match_code,
+    "matchStartDate": time,
+    "matchResult": null,
+    "matchEndDate": null,
+    "matchBetWinProportion": bet_team_1,
+    "matchBetDrawProportion": bet_all,
+    "matchBetLoseProportion": bet_team_2,
+    "matchContract": null,
+  };
+  console.log(1111111111111111111111111111);
+  axios.post("http://localhost:3000/matchInfo", matchInfo)
+  .then(res => {
+    console.log(res);
+    console.log(res.data);
+  }, (error) => {
+    console.log('An error has occur: ', error)
+  })
+  // console.log(matchInfo);
+  return matchInfo;
 }
+// var matchInfo_new =  {
+//   "name":  "BARVMAD",
+//   "matchStartDate": "Mon, 27 Mar 2023 11:08:01 GMT",
+//   "matchResult": null,
+//   "matchEndDate": null,
+//   "matchBetWinProportion": "1.5",
+//   "matchBetDrawProportion": "2",
+//   "matchBetLoseProportion": "2.5",
+//   "matchContract": "0x93f5ee484fe1642dcc250da8a41d031aceeedc28"
+// }
+
